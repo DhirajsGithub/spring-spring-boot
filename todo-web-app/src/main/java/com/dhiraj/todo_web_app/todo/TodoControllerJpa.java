@@ -15,22 +15,22 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-//@Controller  // this is backup we are using TodoController jpa commenting Controller, spring will ignore this Controller then
+@Controller
 @SessionAttributes("name")
 // by this session attribute name will be available in model as well
-public class TodoController {
+public class TodoControllerJpa {
 	
-	private TodoService todoService;
+	private TodoRepository todoRepository;
 	
 	// constructor autowiring
-	public TodoController(TodoService todoService) {
+	public TodoControllerJpa(TodoRepository todoRepository) {
 		super();
-		this.todoService = todoService;
+		this.todoRepository = todoRepository;
 	}
 	
 	@RequestMapping("list-todos")
 	public String listAllTodos(ModelMap model) {
-		List<Todo> todos = todoService.findByUsername(getLoggedInUsername());
+		List<Todo> todos = todoRepository.findByUsername(getLoggedInUsername());
 		model.put("todos", todos);
 		return "listTodos";
 	}
@@ -53,7 +53,8 @@ public class TodoController {
 			return "todo";
 		}
 		String username = getLoggedInUsername();
-		todoService.addTodo(username, todo.getDescription(), todo.gettargetDate(), false);
+		todo.setUsername(username);
+		todoRepository.save(todo);
 		// this is second side binding 
 		// from form to controller
 		return "redirect:list-todos";
@@ -61,14 +62,14 @@ public class TodoController {
 	
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int id) {
-		todoService.deleteTodo(id);
+		todoRepository.deleteById(id);
 		return "redirect:list-todos";
 	}
 	
 	@RequestMapping(value="update-todo", method=RequestMethod.GET)
 	public String updateTodo(@RequestParam int id, ModelMap model) {
 		String username = getLoggedInUsername();
-		Todo todo = todoService.findById(id);
+		Todo todo = todoRepository.findById(id).get();
 		model.put("todo", todo);
 		return "todo";
 	}
@@ -80,7 +81,7 @@ public class TodoController {
 		}
 		String username = getLoggedInUsername();
 		todo.setUsername(username);
-		todoService.updateTodo(todo);
+		todoRepository.save(todo);		// will update the existing todo
 		// this is second side binding 
 		// from form to controller
 		return "redirect:list-todos";

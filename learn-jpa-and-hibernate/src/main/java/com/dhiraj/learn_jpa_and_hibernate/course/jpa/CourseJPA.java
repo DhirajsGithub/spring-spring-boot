@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 @Entity (name="Course")			// maps to table name Course
 public class CourseJPA {
 	
-	@Id		// represent primar key
+	@Id		// represent primary key
 	private long id;
 	
 	@Column(name="name")	// optional, if this field name matched column name then no need to use this annotation
