@@ -104,6 +104,17 @@ DispatcherServelet is being auto configure by DispatcherServeletAutoConfiguratio
 	Accept-language : en, nl, fr, ....
 	create .properties files in resources
 	note the name should be messages.properties and messages_fr or _nl or ...
+	
+	
+	Versioning REST API's
+	you need to implement a breaking change
+	we can't directly implement the change in production, 
+	coz the cusumer are expecting the response back in certain structure
+	we can use versioning of apis : 
+		- URL
+		- Request params
+		- Header
+		- Media Type
 */
 
 
