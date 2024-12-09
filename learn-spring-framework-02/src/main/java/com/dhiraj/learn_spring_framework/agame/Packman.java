@@ -1,4 +1,4 @@
-package com.dhiraj.learn_spring_framework.game;
+package com.dhiraj.learn_spring_framework.agame;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 // Marks the class as a Spring bean, meaning Spring will manage its lifecycle 
 // and make it available for dependency injection wherever needed
 @Component
+//the way you tell spring to create instant of a specific class is by using @Component annotation
+
 
 // @Primary indicates that if multiple beans of the same type exist, 
 // this one should be given preference when injecting that type. 

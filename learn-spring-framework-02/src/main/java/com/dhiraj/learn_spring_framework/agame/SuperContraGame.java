@@ -1,10 +1,12 @@
-package com.dhiraj.learn_spring_framework.game;
+package com.dhiraj.learn_spring_framework.agame;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // Marks this class as a Spring bean, allowing Spring to manage it and inject it where needed
 @Component
+//the way you tell spring to create instant of a specific class is by using @Component annotation
+
 
 // The @Qualifier annotation is used to explicitly differentiate this bean from others of the same type.
 // In this case, this bean is associated with the name "SuperContraGameQualifier", 

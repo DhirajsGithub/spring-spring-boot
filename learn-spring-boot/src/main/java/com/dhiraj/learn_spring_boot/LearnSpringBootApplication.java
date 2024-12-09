@@ -113,7 +113,7 @@ How do you deploy your application (Old way)
 Embedded Server - Simpler alternative 
 	Step 1 : Install Java
 	Step 2 : Run JAR file
-	$ mvn clean install or right click on package > run as > maven buil > goals clean install
+	$ mvn clean install or right click on package > run as > maven build > goals clean install
 	copy [INFO] Building jar: /Users/dhiraj/Desktop/spring&spring_boot/learn-spring-boot/target/learn-spring-boot-0.0.1-SNAPSHOT.jar
 	go in cd /Users/dhiraj/Desktop/spring&spring_boot/learn-spring-boot/target/
 	java -jar learn-spring-boot-0.0.1-SNAPSHOT.jar
@@ -164,5 +164,19 @@ Spring Boot (Spring Project): Build PRODUCTION-READY apps QUICKLY
 		Embedded Server: No need for separate application servers! 
 		Logging and Error Handling
 		Profiles and ConfigurationProperties
+		
+
+Managing App. Configuration using Profiles
+Applications have different environments: Dev, QA, Stage, Prod, ...
+Different environments need different configuration:
+base on that application.properties will change as 
+application-dev.properties
+application-prod.properties
+in this files we can configure different profiles base on the env
+
+
+
+
+
 
  */

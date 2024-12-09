@@ -2,7 +2,7 @@ package com.dhiraj.learn_spring_framework.examples.h1;
 import java.util.Arrays;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.dhiraj.learn_spring_framework.game.GameRunner;
+import com.dhiraj.learn_spring_framework.agame.GameRunner;
 
 /**
  changes in src/main/resources

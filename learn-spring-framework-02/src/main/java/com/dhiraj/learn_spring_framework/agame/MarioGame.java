@@ -1,8 +1,9 @@
-package com.dhiraj.learn_spring_framework.game;
+package com.dhiraj.learn_spring_framework.agame;
 
 import org.springframework.stereotype.Component;
 
 @Component
+// the way you tell spring to create instant of a specific class is by using @Component annotation
 public class MarioGame implements GamingConsole {
 	public void up() {
 		System.out.println("Jump");

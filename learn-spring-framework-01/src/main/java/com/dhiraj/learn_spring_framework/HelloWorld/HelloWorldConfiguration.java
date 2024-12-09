@@ -57,19 +57,25 @@ public class HelloWorldConfiguration {
     }
 
     @Bean
-    // it non of the Address where primary it would have thrown error as :
-    // No qualifying bean of type Address found
-    // available : expected singble matching bean but found myAddress2, address
-    // will use primary bean name myAddress
+  
     public Person person4Parameters(String name, int age, Address anyName){
         return new Person(name, age, anyName);
     }
-    // OR  with qualifier
-    // don't use default address but the qualifier one 
-    // this will use the address2Qualifier bean
+
     @Bean
     public Person person5Parameters(String name, int age, @Qualifier("address2QualifierBean") Address anyName){
         return new Person(name, age, anyName);
     }
-
 }
+
+/*
+ 	 it non of the Address where primary it would have thrown error as :
+     No qualifying bean of type Address found
+     available : expected singble matching bean but found myAddress2, address
+     will use primary bean name myAddress
+     
+     OR  with qualifier
+     don't use default address but the qualifier one 
+     this will use the address2Qualifier bean
+     
+ */

@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 // we will be mapping Course bean directly to the table
-// this class is called entiry
+// this class is called entity
 @Entity (name="Course")			// maps to table name Course
 public class CourseJPA {
 	

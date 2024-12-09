@@ -26,7 +26,7 @@ public class LearnJpaAndHibernateApplication {
  spring.datasource.url=jdbc:h2:mem:testdb
  create a schema.sql file in resources
  
- step 3 : getting started with spring dbbc
+ step 3 : getting started with spring jdbc
  CRUD using sql 
  
  step 4 : inserting hardcode data using spring Jdbc

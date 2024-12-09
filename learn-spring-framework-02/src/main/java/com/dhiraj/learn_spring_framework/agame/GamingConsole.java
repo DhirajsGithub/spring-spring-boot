@@ -1,4 +1,4 @@
-package com.dhiraj.learn_spring_framework.game;
+package com.dhiraj.learn_spring_framework.agame;
 
 public interface GamingConsole {
 	void up();

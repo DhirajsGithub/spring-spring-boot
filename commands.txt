@@ -2,3 +2,4 @@ $ control + N --> create new file
 $ control + space --> available options
 $ command + shift + o --> organising imports
 $ option + command downKey  --> copy a line below a line
+

@@ -19,6 +19,7 @@ public class GamingConfiguration {
     }
 
     @Bean
+    // the gameRunner Bean is taking use of another bean GamingConsole from this class itself
     public GameRunner gameRunner(GamingConsole game){
         var gameRunner = new GameRunner(game);
         return gameRunner;

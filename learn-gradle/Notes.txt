@@ -1,0 +1,62 @@
+two papular build tools in java ecosystem
+1. Maven
+2. Gradle
+
+Gradle
+Goal : Build, automate and deliver better software faster
+	Build anything: Cross-platform tool
+		java, c/c++, java, python
+	Automate everything : completely programmable
+		Completely flexbible 
+			use Domain specific language like Groovy and Kotlin
+	deliver faster : blazing-fast builds
+	same project layout as Maven
+			
+
+add denependcy in build.gradle then right click on project > Gradle > refresh gradle 
+to download the dependency 
+same to remove the dependency
+
+Gradle plugins
+1. Java : Java compilation + testing + bundling capabilities
+		key task : build
+building a project build
+right click on project > run as > run configuration > Gradle Task right click > new configuratin (rename configuration) > add > change task to build or anything
+> choose workspace > apply > run
+build folder : stores all the artifacts (files or directories that a project provides to the outside world) which are generated
+
+2. Dependency management : Maven-like dependency management
+implementation group : 'org.springframework', name : 'spring-core' version: '10.0.3.0.RELEASE'
+or 
+implementation : 'org.springframework:spring-core:10.0.3.0.RELEASE'
+no need to manage version if it is managed gradle plugin
+
+3. Spring boot gradle plugin : spring boot support in Gradle
+
+
+creating tasks in gradle, gradle supports java as well
+tasks.register('helloWorld'){
+	doLast{
+		System.out.println("Hello world");
+	}
+}
+right click on project > run as > run configuration > Gradle Task right click > new configuratin (rename helloWorld) > add > change task to helloWorld
+> choose workspace > apply > run
+
+which one to use Maven vs Gradle
+Let's start with a few popular examples:
+	Spring Framework - Using Gradle since 2012 (Spring Framework v3.2.0)
+	Spring Boot - Using Gradle since 2020 (Spring Boot v2.3.0) 
+	Spring Cloud - Continues to use Maven even today
+		Last update: Spring Cloud has no plans to switch
+		
+Top Maven Advantages: Familiar, Simple and Restrictive
+Top Gradle Advantages: Faster build times and less verbose 
+
+What Do I Recommend: I'm sitting on the fence for now
+Choose whatever tool best meets your projects needs 
+If your builds are taking really long, go with Gradle
+If your builds are simple, stick with Maven
+
+
+

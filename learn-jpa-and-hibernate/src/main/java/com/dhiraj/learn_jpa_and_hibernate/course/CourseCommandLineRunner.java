@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.dhiraj.learn_jpa_and_hibernate.course.jdbc.CourseJDBC;
+import com.dhiraj.learn_jpa_and_hibernate.course.jdbc.CourseJdbcRepository;
 import com.dhiraj.learn_jpa_and_hibernate.course.jpa.CourseJPA;
 import com.dhiraj.learn_jpa_and_hibernate.course.springDataJpa.CourseSpringDataJpaRepository;
 

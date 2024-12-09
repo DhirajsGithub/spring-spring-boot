@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan    // same as ("com.dhiraj.learn_spring_framework.examples.a1")
+@ComponentScan    // same as ("com.dhiraj.learn_spring_framework.examples.a0")
 public class SimpleSpringContextLauncherApplication {
 
     public static void main(String[] args) {

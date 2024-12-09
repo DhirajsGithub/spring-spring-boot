@@ -1,4 +1,4 @@
-package com.dhiraj.learn_spring_framework.game;
+package com.dhiraj.learn_spring_framework.agame;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-@ComponentScan("com.dhiraj.learn_spring_framework.game")
+@ComponentScan("com.dhiraj.learn_spring_framework.agame")
 // both Packman and Game Runner (component) are in same package game
 // spring is managing objects,  performing auto-wiring, creating objects as well
 public class GamingAppLauncherApplication {

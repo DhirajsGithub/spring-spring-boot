@@ -1,0 +1,86 @@
+docker --version
+
+docker container ls
+
+docker container run -d -p 5000:5000 in28min/hello-world-nodejs:0.0.1.RELEASE
+
+https://hub.docker.com/r/in28min/hello-world-nodejs/tags
+
+docker container stop 74d50f087a55
+
+docker container stop <container id>
+
+What's happening in the Background?
+Docker image is downloaded from Docker Registry (Default: Docker Hub)
+    - https://hub.docker.com/r/in28min/hello-world-nodejs
+    - Image is a set of bytes
+    - Container: Running Image
+    - in28min/hello-world-nodejs: Repository Name
+    - 0.0.1.RELEASE: Tag (or version)
+    - -p hostPort:containerPort: Maps internal docker port (container port) to a port on the host (host port)
+        - By default, Docker uses its own internal network called bridge network 
+        - We are mapping a host port so that users can access your application
+    -d: Detatched Mode (Don't tie up the terminal)
+
+
+Terminology
+- Docker Image: A package representing specific version of your application (or software)
+    - Contains everything your app needs
+        - OS, software, code, dependencies
+- Docker Registry: A place to store your docker images
+- Docker Hub: A registry to host Docker images
+- Docker Repository: Docker images for a specific app (tags are used to differentiate different images)
+- Docker Container: Runtime instance of a docker image
+- Dockerfile: File with instructions to create a Docker 
+
+Dockerfile
+FROM --> sets a base image for the build process 
+COPY --> copies new files or directories into image
+EXPOSE --> informs Docker that the container listens on the specified network ports at runtime
+ENTRYPOINT --> configures a command that will run every time the container starts
+# make sure you are inside root directory of the project to run docker commands (i.e. directory where Dockerfile is present)
+
+# FROM openjdk:23-slim
+# COPY target/*.jar app.jar
+# EXPOSE 8080
+# ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+-----------------------
+# Build Stage
+FROM maven:3.9.4 AS build
+WORKDIR /home/app
+COPY ./pom.xml /home/app/pom.xml
+# Pre-fetch dependencies
+RUN mvn -f /home/app/pom.xml dependency:go-offline
+COPY ./src /home/app/src
+RUN mvn -f /home/app/pom.xml clean package
+
+# Runtime Stage
+FROM openjdk:23-slim
+EXPOSE 8080
+COPY --from=build /home/app/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+
+-----------------------------------
+
+$ docker build -t dhiraj/hello-world-docker:v1 .
+# -t is a tag name (dhiraj) which is used to identify the image 
+# . is the current directory where Dockerfile is present (context of the build)
+
+$ docker container run -d -p 8080:8080 dhiraj/hello-world-docker:v1
+
+
+$ docker image list
+# list all the available local images
+
+Spring Boot Maven Plugin - Create Docker Image
+Spring Boot Maven Plugin: Provides Spring Boot support in Apache Maven
+Commands:
+    mvn spring-boot:repackage (create jar or war) Run package using java -jar
+    mvn spring-boot:run (Run application)
+    mvn spring-boot:start (Non-blocking. Use it to run integration tests.) 
+    mvn spring-boot:stop (Stop application started with start command) 
+    mvn spring-boot:build-image (Build a container image)
+
+# to build a docker image using spring boot maven plugin
+in eclipse > right click on project > run as > maven build > Goals: spring-boot:build-image
