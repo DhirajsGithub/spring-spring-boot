@@ -1,0 +1,116 @@
+/* General Body Styling */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+               'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+               sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(
+    135deg, 
+    #f5f7fa 0%, 
+    #e9ecef 50%, 
+    #f1f3f5 100%
+  );
+  min-height: 100vh;
+  width: 100%;
+  
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Prevent text selection on non-input elements */
+  user-select: none;
+
+}
+
+/* Scrollbar Styling for Webkit Browsers */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #4a90e2, #4caf50);
+  border-radius: 5px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(
+      135deg, 
+      #121212 0%, 
+      #1e1e1e 50%, 
+      #2a2a2a 100%
+    );
+    color: #e0e0e0;
+  }
+}
+
+/* Accessibility and Performance Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Typography Reset and Defaults */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Link Styling */
+a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #4caf50;
+  text-decoration: underline;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: rgba(74, 144, 226, 0.2);
+  color: inherit;
+}
+.wrap-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}

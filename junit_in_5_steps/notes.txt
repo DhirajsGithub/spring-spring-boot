@@ -1,0 +1,6 @@
+create a new java project
+create a MyMath.java class in com.dhiraj.junit repo
+create a test as source folder
+right click > new > other > search junit test case
+make one junit test class as MyMathTest in com.dhiraj.unit NOTE : com.dhiraj.unit is inside test 
+convention for test class name MyMath.java ---> MyMathTest.java

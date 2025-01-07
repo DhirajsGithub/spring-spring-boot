@@ -1,0 +1,330 @@
+/* Todo Card Styling */
+.todo-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  overflow: hidden;
+  
+}
+
+.todo-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  transition-duration: 2s;
+}
+
+/* View Mode Styling */
+.todo-view-mode {
+  padding: 15px;
+  /* align-self: start; */
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.todo-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-quick-actions button {
+  background: none;
+  border: none;
+  color: #666;
+  padding: 5px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-edit:hover {
+  color: #007bff;
+}
+
+.btn-delete:hover {
+  color: #dc3545;
+}
+
+.todo-description {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.todo-date, .todo-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.todo-status.completed {
+  color: #28a745;
+}
+
+.todo-status svg, .todo-date svg {
+  margin-right: 5px;
+}
+
+/* Edit Mode Styling */
+/* Edit Mode Styling Overhaul */
+.todo-edit-mode {
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  
+}
+
+.todo-input, .todo-textarea {
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: 
+    border-color 0.3s ease, 
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.todo-input {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.todo-textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.todo-input:focus, 
+.todo-textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.1);
+  background-color: #f0f9f0;
+}
+
+.todo-edit-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.todo-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-field svg {
+  color: #666;
+  font-size: 1rem;
+}
+
+.todo-date-input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+.todo-field label {
+  margin-left: 5px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#todo-done-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4caf50;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+#todo-done-checkbox:checked {
+  background-color: #4caf50;
+}
+
+#todo-done-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+.todo-quick-save {
+  display: flex;
+  gap: 15px;
+}
+
+.todo-quick-save button {
+  flex-grow: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease, 
+    transform 0.2s ease;
+}
+
+.todo-quick-save button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.todo-quick-save button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.todo-quick-save button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .todo-edit-mode {
+    padding: 15px;
+  }
+
+  .todo-metadata {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .todo-quick-save {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .todo-quick-save button {
+    padding: 10px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .todo-metadata {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Add these to your existing CSS */
+.todo-card {
+  transition: border-color 0.3s ease;
+}
+
+.todo-card.overdue {
+  border-left: 4px solid #dc3545;
+}
+
+.todo-card.due-soon {
+  border-left: 4px solid #ffc107;
+}
+
+.todo-card.on-track {
+  border-left: 4px solid #28a745;
+}
+
+.todo-time-status {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.todo-time-status.overdue {
+  color: #dc3545;
+}
+
+.todo-time-status.due-soon {
+  color: #ffc107;
+}
+
+.todo-time-status.on-track {
+  color: #28a745;
+}
+
+/* Simplified edit mode save/cancel */
+.todo-quick-save {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.todo-quick-save button {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.todo-quick-save button:first-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+.todo-quick-save button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.todo-quick-save button:hover {
+  opacity: 0.9;
+}

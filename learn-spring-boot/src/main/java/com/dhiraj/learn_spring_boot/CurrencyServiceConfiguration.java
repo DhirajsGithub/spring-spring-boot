@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 //currency-service.key
 
 @ConfigurationProperties (prefix = "currency-service")
+// currency-service prefix taken from application-dev/prod.properties
 @Component
 public class CurrencyServiceConfiguration {
 	private String url;

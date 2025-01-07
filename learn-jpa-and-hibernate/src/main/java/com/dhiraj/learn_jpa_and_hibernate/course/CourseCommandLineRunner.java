@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import com.dhiraj.learn_jpa_and_hibernate.course.jdbc.CourseJDBC;
 import com.dhiraj.learn_jpa_and_hibernate.course.jdbc.CourseJdbcRepository;
 import com.dhiraj.learn_jpa_and_hibernate.course.jpa.CourseJPA;
+import com.dhiraj.learn_jpa_and_hibernate.course.jpa.CourseJpaRepository;
 import com.dhiraj.learn_jpa_and_hibernate.course.springDataJpa.CourseSpringDataJpaRepository;
 
 @Component
@@ -51,7 +52,7 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 //		System.out.println(repository.findById(3));
 //		
 //	}
-	
+//	
 	
 	
 	@Autowired
